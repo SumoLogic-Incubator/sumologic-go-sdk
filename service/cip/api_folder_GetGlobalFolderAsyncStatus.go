@@ -2,16 +2,18 @@ package cip
 
 import (
 	"fmt"
-	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
+
+	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 )
 
 /*
 GetGlobalFolderAsyncStatus
 Get the status of an asynchronous global folder job for the given job identifier.
+
 	jobId - The identifier of the asynchronous global folder job.
 */
 func (a *APIClient) GetGlobalFolderAsyncStatus(jobId string) (types.AsyncJobStatus, *http.Response, error) {
@@ -91,10 +93,12 @@ func (a *APIClient) GetGlobalFolderAsyncStatus(jobId string) (types.AsyncJobStat
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
 			}
-			if v.Errors[0].Meta.Reason != "" {
-				newErr.error = v.Errors[0].Message + ": " + v.Errors[0].Meta.Reason
-			} else {
-				newErr.error = v.Errors[0].Message
+			if len(v.Errors) > 0 {
+				if v.Errors[0].Meta.Reason != "" {
+					newErr.error = v.Errors[0].Message + ": " + v.Errors[0].Meta.Reason
+				} else {
+					newErr.error = v.Errors[0].Message
+				}
 			}
 			return localVarReturnValue, localVarHttpResponse, newErr
 		}

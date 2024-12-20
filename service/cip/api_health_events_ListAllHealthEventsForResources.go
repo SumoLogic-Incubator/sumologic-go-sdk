@@ -1,21 +1,23 @@
 package cip
 
 import (
-	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
+
+	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 )
 
 /*
 ListAllHealthEventsForResources
 Get a list of all the unresolved events in your account that belong to the supplied resource identifiers.
 If you want to retrieve health events for a Source or Ingest Budget use the following functions: ListSourceHealthEvents or ListIngestBudgetHealthEvents
-	body - Resource identifiers to request health events from.
-	optional - nil or *types.HealthEventsOpts - Optional Parameters:
-		Limit (optional.Int32) - Limit the number of health events returned in the response. The number of health events returned may be less than the limit.
-     	Token (optional.String) - Continuation token to get the next page of results. A page object with the next continuation token is returned in the response body. Subsequent GET requests should specify the continuation token to get the next page of results. token is set to null when no more pages are left.
+
+		body - Resource identifiers to request health events from.
+		optional - nil or *types.HealthEventsOpts - Optional Parameters:
+			Limit (optional.Int32) - Limit the number of health events returned in the response. The number of health events returned may be less than the limit.
+	     	Token (optional.String) - Continuation token to get the next page of results. A page object with the next continuation token is returned in the response body. Subsequent GET requests should specify the continuation token to get the next page of results. token is set to null when no more pages are left.
 */
 func (a *APIClient) ListAllHealthEventsForResources(body types.ResourceIdentities, localVarOptionals *types.HealthEventsOpts) (types.ListHealthEventResponse, *http.Response, error) {
 	var (
@@ -101,10 +103,12 @@ func (a *APIClient) ListAllHealthEventsForResources(body types.ResourceIdentitie
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
 			}
-			if v.Errors[0].Meta.Reason != "" {
-				newErr.error = v.Errors[0].Message + ": " + v.Errors[0].Meta.Reason
-			} else {
-				newErr.error = v.Errors[0].Message
+			if len(v.Errors) > 0 {
+				if v.Errors[0].Meta.Reason != "" {
+					newErr.error = v.Errors[0].Message + ": " + v.Errors[0].Meta.Reason
+				} else {
+					newErr.error = v.Errors[0].Message
+				}
 			}
 			return localVarReturnValue, localVarHttpResponse, newErr
 		}

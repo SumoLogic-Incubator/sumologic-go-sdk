@@ -2,16 +2,18 @@ package cip
 
 import (
 	"fmt"
-	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
+
+	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 )
 
 /*
 ImportMonitorsItem
 Import a monitor or folder.
+
 	body - The monitor or folder to be imported.
 	parentId - Identifier of the parent folder in which to import the monitor or folder.
 */
@@ -94,10 +96,12 @@ func (a *APIClient) ImportMonitorsItem(body types.MonitorsLibraryBaseExport, par
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
 			}
-			if v.Errors[0].Meta.Reason != "" {
-				newErr.error = v.Errors[0].Message + ": " + v.Errors[0].Meta.Reason
-			} else {
-				newErr.error = v.Errors[0].Message
+			if len(v.Errors) > 0 {
+				if v.Errors[0].Meta.Reason != "" {
+					newErr.error = v.Errors[0].Message + ": " + v.Errors[0].Meta.Reason
+				} else {
+					newErr.error = v.Errors[0].Message
+				}
 			}
 			return localVarReturnValue, localVarHttpResponse, newErr
 		}

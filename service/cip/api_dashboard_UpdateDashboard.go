@@ -2,16 +2,18 @@ package cip
 
 import (
 	"fmt"
-	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
+
+	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 )
 
 /*
 UpdateDashboard
 Update a dashboard by the given identifier.
+
 	body - Information to update on the dashboard.
 	id - Identifier of the dashboard to update.
 */
@@ -94,10 +96,12 @@ func (a *APIClient) UpdateDashboard(body types.DashboardRequest, id string) (typ
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
 			}
-			if v.Errors[0].Meta.Reason != "" {
-				newErr.error = v.Errors[0].Message + ": " + v.Errors[0].Meta.Reason
-			} else {
-				newErr.error = v.Errors[0].Message
+			if len(v.Errors) > 0 {
+				if v.Errors[0].Meta.Reason != "" {
+					newErr.error = v.Errors[0].Message + ": " + v.Errors[0].Meta.Reason
+				} else {
+					newErr.error = v.Errors[0].Message
+				}
 			}
 			return localVarReturnValue, localVarHttpResponse, newErr
 		}

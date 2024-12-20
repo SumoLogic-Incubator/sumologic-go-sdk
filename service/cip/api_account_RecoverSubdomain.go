@@ -1,16 +1,18 @@
 package cip
 
 import (
-	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
+
+	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 )
 
 /*
 RecoverSubdomains
 Send an email with the subdomain information for a user with the given email address.
+
 	email - Email address of the user to get subdomain information.
 */
 func (a *APIClient) RecoverSubdomains(email string) (*http.Response, error) {
@@ -74,10 +76,12 @@ func (a *APIClient) RecoverSubdomains(email string) (*http.Response, error) {
 				newErr.error = err.Error()
 				return localVarHttpResponse, newErr
 			}
-			if v.Errors[0].Meta.Reason != "" {
-				newErr.error = v.Errors[0].Message + ": " + v.Errors[0].Meta.Reason
-			} else {
-				newErr.error = v.Errors[0].Message
+			if len(v.Errors) > 0 {
+				if v.Errors[0].Meta.Reason != "" {
+					newErr.error = v.Errors[0].Message + ": " + v.Errors[0].Meta.Reason
+				} else {
+					newErr.error = v.Errors[0].Message
+				}
 			}
 			return localVarHttpResponse, newErr
 		}

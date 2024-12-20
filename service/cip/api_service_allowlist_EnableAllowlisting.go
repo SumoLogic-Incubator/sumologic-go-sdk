@@ -1,16 +1,18 @@
 package cip
 
 import (
-	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
+
+	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 )
 
 /*
 EnableAllowlisting
 Enable service allowlisting functionality for the organization. The service allowlisting can be for 1. Login: If enabled, access to Sumo Logic is granted only to CIDRs/IP addresses that are allowlisted. 2. Content: If enabled, dashboards can be shared with users connecting from CIDRs/IP addresses that are allowlisted without logging in.
+
 	allowlistType - The type of allowlisting to be enabled. It can be one of: Login, Content, or Both.
 */
 func (a *APIClient) EnableAllowlisting(allowlistType string) (*http.Response, error) {
@@ -74,10 +76,12 @@ func (a *APIClient) EnableAllowlisting(allowlistType string) (*http.Response, er
 				newErr.error = err.Error()
 				return localVarHttpResponse, newErr
 			}
-			if v.Errors[0].Meta.Reason != "" {
-				newErr.error = v.Errors[0].Message + ": " + v.Errors[0].Meta.Reason
-			} else {
-				newErr.error = v.Errors[0].Message
+			if len(v.Errors) > 0 {
+				if v.Errors[0].Meta.Reason != "" {
+					newErr.error = v.Errors[0].Message + ": " + v.Errors[0].Meta.Reason
+				} else {
+					newErr.error = v.Errors[0].Message
+				}
 			}
 			return localVarHttpResponse, newErr
 		}

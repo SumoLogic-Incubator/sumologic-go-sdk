@@ -1,16 +1,18 @@
 package cip
 
 import (
-	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
+
+	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 )
 
 /*
 SearchMonitors
 Search for a monitor or folder in the monitors library structure.
+
 	query - The search query to find monitor or folder. The following is a list of different filters:
 		**createdBy**: Filter by the user's identifier who created the content (createdBy:000000000000968B).
 		**createdBefore**: Filter by the content objects created before the given timestamp(in milliseconds) (createdBefore:1457997222).
@@ -107,10 +109,12 @@ func (a *APIClient) SearchMonitors(query string, localVarOptionals *types.Monito
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
 			}
-			if v.Errors[0].Meta.Reason != "" {
-				newErr.error = v.Errors[0].Message + ": " + v.Errors[0].Meta.Reason
-			} else {
-				newErr.error = v.Errors[0].Message
+			if len(v.Errors) > 0 {
+				if v.Errors[0].Meta.Reason != "" {
+					newErr.error = v.Errors[0].Message + ": " + v.Errors[0].Meta.Reason
+				} else {
+					newErr.error = v.Errors[0].Message
+				}
 			}
 			return localVarReturnValue, localVarHttpResponse, newErr
 		}

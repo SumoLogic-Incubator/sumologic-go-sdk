@@ -1,16 +1,18 @@
 package cip
 
 import (
-	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
+
+	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 )
 
 /*
 GetItemByPath
 Get a content item corresponding to the given path. The absolute path to a content item should be specified to get the item. The content library has Library folder at the root level. For items in Personal folder, the base path is /Library/Users/user@sumo.com where user@sumo.com is the email address of the user. For example if a user with email address wile@acme.com has Rockets folder inside Personal folder, the path of Rockets folder will be /Library/Users/wile@acme.com/Rockets.  For items in Admin Recommended folder, the base path is /Library/Admin Recommended. For example, given a folder Acme in Admin Recommended folder, the path will be /Library/Admin Recommended/Acme.
+
 	path - Path of the content item to retrieve.
 */
 func (a *APIClient) GetItemByPath(path string) (types.Content, *http.Response, error) {
@@ -90,10 +92,12 @@ func (a *APIClient) GetItemByPath(path string) (types.Content, *http.Response, e
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
 			}
-			if v.Errors[0].Meta.Reason != "" {
-				newErr.error = v.Errors[0].Message + ": " + v.Errors[0].Meta.Reason
-			} else {
-				newErr.error = v.Errors[0].Message
+			if len(v.Errors) > 0 {
+				if v.Errors[0].Meta.Reason != "" {
+					newErr.error = v.Errors[0].Message + ": " + v.Errors[0].Meta.Reason
+				} else {
+					newErr.error = v.Errors[0].Message
+				}
 			}
 			return localVarReturnValue, localVarHttpResponse, newErr
 		}

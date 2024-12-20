@@ -1,16 +1,18 @@
 package cip
 
 import (
-	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
+
+	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 )
 
 /*
 GetGlobalFolderAsync
 Schedule an asynchronous job to get global folder. Global folder contains all content items that a user has permissions to view in the organization.
+
 	optional - nil or *types.FolderOpts - Optional Parameters:
 		IsAdminMode (optional.String) - Set this to true if you want to perform the request as a Content Administrator.
 */
@@ -93,10 +95,12 @@ func (a *APIClient) GetGlobalFolderAsync(localVarOptionals *types.FolderOpts) (t
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
 			}
-			if v.Errors[0].Meta.Reason != "" {
-				newErr.error = v.Errors[0].Message + ": " + v.Errors[0].Meta.Reason
-			} else {
-				newErr.error = v.Errors[0].Message
+			if len(v.Errors) > 0 {
+				if v.Errors[0].Meta.Reason != "" {
+					newErr.error = v.Errors[0].Message + ": " + v.Errors[0].Meta.Reason
+				} else {
+					newErr.error = v.Errors[0].Message
+				}
 			}
 			return localVarReturnValue, localVarHttpResponse, newErr
 		}

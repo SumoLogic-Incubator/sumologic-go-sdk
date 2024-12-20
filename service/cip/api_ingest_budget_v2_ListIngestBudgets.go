@@ -1,19 +1,21 @@
 package cip
 
 import (
-	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
+
+	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 )
 
 /*
 ListIngestBudgetsV2
 Get a list of all ingest budgets. The response is paginated with a default limit of 100 budgets per page.
-	optional - nil or *types.ListIngestBudgetV2Opts - Optional Parameters:
-		Limit (optional.Int32) - Limit the number of budgets returned in the response. The number of budgets returned may be less than the limit.
-     	Token (optional.String) - Continuation token to get the next page of results. A page object with the next continuation token is returned in the response body. Subsequent GET requests should specify the continuation token to get the next page of results.
+
+		optional - nil or *types.ListIngestBudgetV2Opts - Optional Parameters:
+			Limit (optional.Int32) - Limit the number of budgets returned in the response. The number of budgets returned may be less than the limit.
+	     	Token (optional.String) - Continuation token to get the next page of results. A page object with the next continuation token is returned in the response body. Subsequent GET requests should specify the continuation token to get the next page of results.
 */
 func (a *APIClient) ListIngestBudgetsV2(localVarOptionals *types.ListIngestBudgetV2Opts) (types.ListIngestBudgetsResponseV2, *http.Response, error) {
 	var (
@@ -97,10 +99,12 @@ func (a *APIClient) ListIngestBudgetsV2(localVarOptionals *types.ListIngestBudge
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
 			}
-			if v.Errors[0].Meta.Reason != "" {
-				newErr.error = v.Errors[0].Message + ": " + v.Errors[0].Meta.Reason
-			} else {
-				newErr.error = v.Errors[0].Message
+			if len(v.Errors) > 0 {
+				if v.Errors[0].Meta.Reason != "" {
+					newErr.error = v.Errors[0].Message + ": " + v.Errors[0].Meta.Reason
+				} else {
+					newErr.error = v.Errors[0].Message
+				}
 			}
 			return localVarReturnValue, localVarHttpResponse, newErr
 		}

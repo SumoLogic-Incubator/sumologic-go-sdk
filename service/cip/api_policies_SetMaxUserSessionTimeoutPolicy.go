@@ -1,16 +1,18 @@
 package cip
 
 import (
-	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
+
+	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 )
 
 /*
 SetMaxUserSessionTimeoutPolicy
 Set the Max User Session Timeout policy. When enabled, this policy sets the maximum web session timeout users are able to configure within their user preferences. Users preferences will be updated to match this value only if their current preference is set to a higher value. [Learn More](https://help.sumologic.com/Manage/Security/Set_a_Maximum_Web_Session_Timeout)
+
 	body - Specifies if the policy is enabled or not
 */
 func (a *APIClient) SetMaxUserSessionTimeoutPolicy(body types.MaxUserSessionTimeoutPolicy) (types.MaxUserSessionTimeoutPolicy, *http.Response, error) {
@@ -91,10 +93,12 @@ func (a *APIClient) SetMaxUserSessionTimeoutPolicy(body types.MaxUserSessionTime
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
 			}
-			if v.Errors[0].Meta.Reason != "" {
-				newErr.error = v.Errors[0].Message + ": " + v.Errors[0].Meta.Reason
-			} else {
-				newErr.error = v.Errors[0].Message
+			if len(v.Errors) > 0 {
+				if v.Errors[0].Meta.Reason != "" {
+					newErr.error = v.Errors[0].Message + ": " + v.Errors[0].Meta.Reason
+				} else {
+					newErr.error = v.Errors[0].Message
+				}
 			}
 			return localVarReturnValue, localVarHttpResponse, newErr
 		}

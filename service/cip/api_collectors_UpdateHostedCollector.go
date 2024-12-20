@@ -13,6 +13,7 @@ import (
 /*
 UpdateHostedCollector
 Updates a hosted collector in the organization.
+
 	body - Information to update about the collector.
 	id - Identifier of the hosted collector to update.
 */

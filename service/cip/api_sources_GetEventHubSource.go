@@ -12,6 +12,7 @@ import (
 /*
 GetEventHubSource
 Get information about an Azure Event Hub source.
+
 	collectorId - The identifier of the Sumo Logic collector that the source is assigned to.
 	sourceId - The identifier of the Sumo Logic Azure Event Hub source.
 */

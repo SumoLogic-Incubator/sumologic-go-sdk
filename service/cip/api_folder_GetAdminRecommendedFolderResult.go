@@ -2,16 +2,18 @@ package cip
 
 import (
 	"fmt"
-	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
+
+	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 )
 
 /*
 GetAdminRecommendedFolderAsyncResult
 Get results from Admin Recommended job for the given job identifier.
+
 	jobId - The identifier of the asynchronous Admin Recommended folder job.
 */
 func (a *APIClient) GetAdminRecommendedFolderAsyncResult(jobId string) (types.Folder, *http.Response, error) {
@@ -91,10 +93,12 @@ func (a *APIClient) GetAdminRecommendedFolderAsyncResult(jobId string) (types.Fo
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
 			}
-			if v.Errors[0].Meta.Reason != "" {
-				newErr.error = v.Errors[0].Message + ": " + v.Errors[0].Meta.Reason
-			} else {
-				newErr.error = v.Errors[0].Message
+			if len(v.Errors) > 0 {
+				if v.Errors[0].Meta.Reason != "" {
+					newErr.error = v.Errors[0].Message + ": " + v.Errors[0].Meta.Reason
+				} else {
+					newErr.error = v.Errors[0].Message
+				}
 			}
 			return localVarReturnValue, localVarHttpResponse, newErr
 		}

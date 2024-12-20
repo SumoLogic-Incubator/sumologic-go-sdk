@@ -12,6 +12,7 @@ import (
 /*
 CreateEventHubSource
 Create an Azure Event Hub source.
+
 	body - The definition of the Event Hub source.
 	collectorId - The identifier of the Sumo Logic collector to assign the source to.
 */

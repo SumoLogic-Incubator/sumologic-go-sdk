@@ -12,6 +12,7 @@ import (
 /*
 GetAWSS3ArchiveSource
 Get information about an AWS S3 Archive source.
+
 	collectorId - The identifier of the Sumo Logic collector that the source is assigned to.
 	sourceId - The identifier of the Sumo Logic AWS S3 Archive source.
 */

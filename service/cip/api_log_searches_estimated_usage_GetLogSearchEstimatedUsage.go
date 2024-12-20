@@ -1,16 +1,18 @@
 package cip
 
 import (
-	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
+
+	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 )
 
 /*
 GetLogSearchEstimatedUsage
 Gets the estimated volume of data that would be scanned for a given log search in the Infrequent data tier.
+
 	body - The definition of the log search estimated usage.
 */
 func (a *APIClient) GetLogSearchEstimatedUsage(body types.LogSearchEstimatedUsageRequest) (types.LogSearchEstimatedUsageDefinition, *http.Response, error) {
@@ -91,10 +93,12 @@ func (a *APIClient) GetLogSearchEstimatedUsage(body types.LogSearchEstimatedUsag
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
 			}
-			if v.Errors[0].Meta.Reason != "" {
-				newErr.error = v.Errors[0].Message + ": " + v.Errors[0].Meta.Reason
-			} else {
-				newErr.error = v.Errors[0].Message
+			if len(v.Errors) > 0 {
+				if v.Errors[0].Meta.Reason != "" {
+					newErr.error = v.Errors[0].Message + ": " + v.Errors[0].Meta.Reason
+				} else {
+					newErr.error = v.Errors[0].Message
+				}
 			}
 			return localVarReturnValue, localVarHttpResponse, newErr
 		}

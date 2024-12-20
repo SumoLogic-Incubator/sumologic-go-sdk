@@ -1,16 +1,18 @@
 package cip
 
 import (
-	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
+
+	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 )
 
 /*
 ListRoles
 Get a list of all the roles in the organization. The response is paginated with a default limit of 100 roles per page.
+
 	optional - nil or *types.ListRolesOpts - Optional Parameters:
 		Limit (optional.Int32) -  Limit the number of roles returned in the response. The number of roles returned may be less than the &#x60;limit&#x60;.
 		Token (optional.String) -  Continuation token to get the next page of results. A page object with the next continuation token is returned in the response body. Subsequent GET requests should specify the continuation token to get the next page of results. Token is set to null when no more pages are left.
@@ -105,10 +107,12 @@ func (a *APIClient) ListRoles(localVarOptionals *types.ListRolesOpts) (types.Lis
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
 			}
-			if v.Errors[0].Meta.Reason != "" {
-				newErr.error = v.Errors[0].Message + ": " + v.Errors[0].Meta.Reason
-			} else {
-				newErr.error = v.Errors[0].Message
+			if len(v.Errors) > 0 {
+				if v.Errors[0].Meta.Reason != "" {
+					newErr.error = v.Errors[0].Message + ": " + v.Errors[0].Meta.Reason
+				} else {
+					newErr.error = v.Errors[0].Message
+				}
 			}
 			return localVarReturnValue, localVarHttpResponse, newErr
 		}

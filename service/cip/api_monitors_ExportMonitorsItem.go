@@ -2,16 +2,18 @@ package cip
 
 import (
 	"fmt"
-	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
+
+	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 )
 
 /*
 ExportMonitorsItem
 Export a monitor or folder. If the given identifier is a folder, everything under the folder is exported recursively with folder as the root.
+
 	id - Identifier of the monitor or folder to export.
 */
 func (a *APIClient) ExportMonitorsItem(id string) (types.MonitorsLibraryBaseExport, *http.Response, error) {
@@ -91,10 +93,12 @@ func (a *APIClient) ExportMonitorsItem(id string) (types.MonitorsLibraryBaseExpo
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
 			}
-			if v.Errors[0].Meta.Reason != "" {
-				newErr.error = v.Errors[0].Message + ": " + v.Errors[0].Meta.Reason
-			} else {
-				newErr.error = v.Errors[0].Message
+			if len(v.Errors) > 0 {
+				if v.Errors[0].Meta.Reason != "" {
+					newErr.error = v.Errors[0].Message + ": " + v.Errors[0].Meta.Reason
+				} else {
+					newErr.error = v.Errors[0].Message
+				}
 			}
 			return localVarReturnValue, localVarHttpResponse, newErr
 		}

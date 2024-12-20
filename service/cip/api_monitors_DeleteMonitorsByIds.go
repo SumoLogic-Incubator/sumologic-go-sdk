@@ -1,16 +1,18 @@
 package cip
 
 import (
-	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
+
+	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 )
 
 /*
 DeleteMonitorsByIds
 Bulk delete a monitor or folder by the given identifiers in the monitors library.
+
 	ids - A comma-separated list of identifiers.
 */
 func (a *APIClient) DeleteMonitorsByIds(ids []string) (map[string]types.MonitorsLibraryBaseResponse, *http.Response, error) {
@@ -90,10 +92,12 @@ func (a *APIClient) DeleteMonitorsByIds(ids []string) (map[string]types.Monitors
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
 			}
-			if v.Errors[0].Meta.Reason != "" {
-				newErr.error = v.Errors[0].Message + ": " + v.Errors[0].Meta.Reason
-			} else {
-				newErr.error = v.Errors[0].Message
+			if len(v.Errors) > 0 {
+				if v.Errors[0].Meta.Reason != "" {
+					newErr.error = v.Errors[0].Message + ": " + v.Errors[0].Meta.Reason
+				} else {
+					newErr.error = v.Errors[0].Message
+				}
 			}
 			return localVarReturnValue, localVarHttpResponse, newErr
 		}

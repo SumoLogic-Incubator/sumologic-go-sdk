@@ -2,11 +2,12 @@ package cip
 
 import (
 	"fmt"
-	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
+
+	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 )
 
 /*
@@ -14,6 +15,7 @@ GetAsyncExportResult
 Get results from content export job for the given job identifier. The results from this export are incompatible with the Library import feature in the Sumo user interface.
 You can use this function to find out type of content was exported and use one of the following functions to return the appropriate data for the content type: GetFolderAsyncExportResult,
 GetDashboardAsyncExportResult, GetMewboardAsyncExportResult, GetSavedSearchAsyncExportResult, GetMetricsSavedSearchAsyncExportResult, GetMetricsSearchAsyncExportResult, GetLookupTableAsyncExportResult.
+
 	contentId - The identifier of the exported content item.
 	jobId - The identifier of the asynchronous job.
 	optional - nil or *types.ContentOpts - Optional Parameters:
@@ -100,10 +102,12 @@ func (a *APIClient) GetAsyncExportResult(contentId string, jobId string, localVa
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
 			}
-			if v.Errors[0].Meta.Reason != "" {
-				newErr.error = v.Errors[0].Message + ": " + v.Errors[0].Meta.Reason
-			} else {
-				newErr.error = v.Errors[0].Message
+			if len(v.Errors) > 0 {
+				if v.Errors[0].Meta.Reason != "" {
+					newErr.error = v.Errors[0].Message + ": " + v.Errors[0].Meta.Reason
+				} else {
+					newErr.error = v.Errors[0].Message
+				}
 			}
 			return localVarReturnValue, localVarHttpResponse, newErr
 		}

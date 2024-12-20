@@ -2,18 +2,20 @@ package cip
 
 import (
 	"fmt"
-	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 	"io"
 	"io/ioutil"
 	"net/http"
 	"net/url"
 	"os"
 	"strings"
+
+	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 )
 
 /*
 UploadFile
 Create a request to populate a lookup table with a CSV file.
+
 	file - A CSV file
 	id - Identifier of the lookup table to populate.
 	optional - nil or *types.LookupTableUploadFileOpts - Optional Parameters:
@@ -113,10 +115,12 @@ func (a *APIClient) UploadFile(file *os.File, id string, localVarOptionals *type
 				newErr.error = err.Error()
 				return localVarReturnValue, localVarHttpResponse, newErr
 			}
-			if v.Errors[0].Meta.Reason != "" {
-				newErr.error = v.Errors[0].Message + ": " + v.Errors[0].Meta.Reason
-			} else {
-				newErr.error = v.Errors[0].Message
+			if len(v.Errors) > 0 {
+				if v.Errors[0].Meta.Reason != "" {
+					newErr.error = v.Errors[0].Message + ": " + v.Errors[0].Meta.Reason
+				} else {
+					newErr.error = v.Errors[0].Message
+				}
 			}
 			return localVarReturnValue, localVarHttpResponse, newErr
 		}

@@ -12,6 +12,7 @@ import (
 /*
 DeleteSource
 Deletes the specified source from the specified collector.
+
 	collectorId - Identifier of the collector that the source is attached to.
 	sourceId - Identifier of the source.
 */
