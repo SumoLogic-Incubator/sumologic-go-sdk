@@ -2,18 +2,16 @@ package cip
 
 import (
 	"fmt"
+	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
-
-	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 )
 
 /*
 UnlockUser
 Unlock another user's account.
-
 	id - The id of the user that needs to be unlocked.
 */
 func (a *APIClient) UnlockUser(id string) (*http.Response, error) {

@@ -2,18 +2,16 @@ package cip
 
 import (
 	"fmt"
+	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
-
-	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 )
 
 /*
 DeleteExtractionRule
 Delete a field extraction rule with the given identifier.
-
 	id - Identifier of the field extraction rule to delete.
 */
 func (a *APIClient) DeleteExtractionRule(id string) (*http.Response, error) {

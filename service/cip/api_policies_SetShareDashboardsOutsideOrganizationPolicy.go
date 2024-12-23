@@ -1,18 +1,16 @@
 package cip
 
 import (
+	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
-
-	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 )
 
 /*
 SetShareDashboardsOutsideOrganizationPolicy
 Set the Share Dashboards Outside Organization policy. This policy allows users to share the dashboard with view only privileges outside of the organization (capability must be enabled from the Roles page). Disabling this policy will disable all dashboards that have been shared outside of the organization. [Learn More](https://help.sumologic.com/Visualizations-and-Alerts/Dashboards/Share_Dashboards/Share_a_Dashboard_Outside_Your_Org)
-
 	body - Specifies if the policy is enabled or not
 */
 func (a *APIClient) SetShareDashboardsOutsideOrganizationPolicy(body types.ShareDashboardsOutsideOrganizationPolicy) (types.ShareDashboardsOutsideOrganizationPolicy, *http.Response, error) {

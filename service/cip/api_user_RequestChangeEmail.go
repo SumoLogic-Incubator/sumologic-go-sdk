@@ -2,18 +2,16 @@ package cip
 
 import (
 	"fmt"
+	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
-
-	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 )
 
 /*
 RequestChangeEmail
 An email with an activation link is sent to the user’s new email address. The user must click the link in the email within seven days to complete the email address change, or the link will expire.
-
 	body - New email address of the user.
 	id - Identifier of the user to change email address.
 */

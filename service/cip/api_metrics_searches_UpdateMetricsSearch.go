@@ -2,18 +2,16 @@ package cip
 
 import (
 	"fmt"
+	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
-
-	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 )
 
 /*
 UpdateMetricsSearch
 Updates a metrics search with the specified identifier. Partial updates are not supported, you must provide values for all fields.
-
 	body - An updated metrics search definition.
 	id - Identifier of the metrics search.
 */

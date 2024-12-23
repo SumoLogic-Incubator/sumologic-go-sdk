@@ -2,18 +2,16 @@ package cip
 
 import (
 	"fmt"
+	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
-
-	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 )
 
 /*
 UpdateFolder
 Update an existing folder with the given identifier.
-
 	body - Information to update about the folder.
 	id - Identifier of the folder to update.
 	optional - nil or *types.FolderOpts - Optional Parameters:

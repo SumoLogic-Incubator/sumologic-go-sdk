@@ -2,18 +2,16 @@ package cip
 
 import (
 	"fmt"
+	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
-
-	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 )
 
 /*
 GetDashboard
 Get a dashboard by the given identifier.
-
 	id - UUID of the dashboard to return.
 */
 func (a *APIClient) GetDashboard(id string) (types.Dashboard, *http.Response, error) {

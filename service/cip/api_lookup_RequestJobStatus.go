@@ -2,18 +2,16 @@ package cip
 
 import (
 	"fmt"
+	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
-
-	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 )
 
 /*
 RequestJobStatus
 Retrieve the status of a previously made request. If the request was successful, the status of the response object will be Success.
-
 	jobId - An identifier returned in response to an asynchronous request.
 */
 func (a *APIClient) RequestJobStatus(jobId string) (types.LookupAsyncJobStatus, *http.Response, error) {

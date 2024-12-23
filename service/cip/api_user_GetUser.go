@@ -2,18 +2,16 @@ package cip
 
 import (
 	"fmt"
+	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
-
-	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 )
 
 /*
 GetUser
 Get a user with the given identifier from the organization.
-
 	id - Identifier of user to return.
 */
 func (a *APIClient) GetUser(id string) (types.UserModel, *http.Response, error) {

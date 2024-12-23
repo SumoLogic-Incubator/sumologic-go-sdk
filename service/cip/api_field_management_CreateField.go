@@ -1,18 +1,16 @@
 package cip
 
 import (
+	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
-
-	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 )
 
 /*
 CreateField
 Adding a field will define it in the Fields schema allowing it to be assigned as metadata to your logs.
-
 	body - Name of a field to add. The name is used as the key in the key-value pair.
 */
 func (a *APIClient) CreateField(body types.FieldName) (types.CustomField, *http.Response, error) {

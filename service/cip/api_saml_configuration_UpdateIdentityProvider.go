@@ -2,18 +2,16 @@ package cip
 
 import (
 	"fmt"
+	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
-
-	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 )
 
 /*
 UpdateIdentityProvider
 Update an existing SAML configuration in the organization.
-
 	body - Information to update in the SAML configuration.
 	id - Identifier of the SAML configuration to update.
 */

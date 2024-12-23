@@ -2,20 +2,18 @@ package cip
 
 import (
 	"fmt"
+	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 	"io"
 	"io/ioutil"
 	"net/http"
 	"net/url"
 	"os"
 	"strings"
-
-	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 )
 
 /*
 UploadFile
 Create a request to populate a lookup table with a CSV file.
-
 	file - A CSV file
 	id - Identifier of the lookup table to populate.
 	optional - nil or *types.LookupTableUploadFileOpts - Optional Parameters:

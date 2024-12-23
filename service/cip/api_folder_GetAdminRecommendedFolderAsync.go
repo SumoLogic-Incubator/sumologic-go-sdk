@@ -1,18 +1,16 @@
 package cip
 
 import (
+	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
-
-	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 )
 
 /*
 GetAdminRecommendedFolderAsync
 Schedule an asynchronous job to get the top-level Admin Recommended content items.
-
 	optional - nil or *types.FolderOpts - Optional Parameters:
 		IsAdminMode (optional.String) - Set this to true if you want to perform the request as a Content Administrator.
 */

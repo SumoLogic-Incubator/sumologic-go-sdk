@@ -2,18 +2,16 @@ package cip
 
 import (
 	"fmt"
+	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
-
-	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 )
 
 /*
 DeleteToken
 Delete a token with the given identifier in the token library.
-
 	id - Identifier of the token to delete.
 */
 func (a *APIClient) DeleteToken(id string) (*http.Response, error) {

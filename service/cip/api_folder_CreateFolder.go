@@ -1,18 +1,16 @@
 package cip
 
 import (
+	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
-
-	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 )
 
 /*
 CreateFolder
 Creates a new folder under the given parent folder.
-
 	body - Information about the new folder.
 	optional - nil or *types.FolderOpts - Optional Parameters:
 		IsAdminMode (optional.String) - Set this to true if you want to perform the request as a Content Administrator.

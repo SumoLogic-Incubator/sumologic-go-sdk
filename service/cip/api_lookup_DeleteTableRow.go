@@ -2,18 +2,16 @@ package cip
 
 import (
 	"fmt"
+	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
-
-	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 )
 
 /*
 DeleteTableRow
 Delete a row from lookup table by giving primary key. The complete set of primary key fields of the lookup table should be provided.
-
 	body - Lookup table row delete definition.
 	id - Identifier of the lookup table.
 */

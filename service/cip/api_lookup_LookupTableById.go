@@ -2,18 +2,16 @@ package cip
 
 import (
 	"fmt"
+	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
-
-	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 )
 
 /*
 LookupTableById
 Get a lookup table for the given identifier.
-
 	id - Identifier of the lookup table.
 */
 func (a *APIClient) LookupTableById(id string) (types.LookupTable, *http.Response, error) {

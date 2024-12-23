@@ -1,18 +1,16 @@
 package cip
 
 import (
+	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
-
-	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 )
 
 /*
 DisableAllowlisting
 Disable service allowlisting functionality for login/API authentication or content sharing for the organization.
-
 	allowlistType - The type of allowlisting to be disabled. It can be one of: Login, Content, or Both.
 */
 func (a *APIClient) DisableAllowlisting(allowlistType string) (*http.Response, error) {

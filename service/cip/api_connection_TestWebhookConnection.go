@@ -1,18 +1,16 @@
 package cip
 
 import (
+	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
-
-	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 )
 
 /*
 TestWebhookConnection
 Test a new webhook connection url is valid and can connect.
-
 	body - Information about the new webhook connection.
 */
 func (a *APIClient) TestWebhookConnection(body types.WebhookDefinition) (types.TestConnectionResponse, *http.Response, error) {

@@ -1,18 +1,16 @@
 package cip
 
 import (
+	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
-
-	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 )
 
 /*
 CreateScheduledView
 Creates a new scheduled view in the organization.
-
 	body - Information about the new scheduled view.
 */
 func (a *APIClient) CreateScheduledView(body types.CreateScheduledViewDefinition) (types.ScheduledView, *http.Response, error) {

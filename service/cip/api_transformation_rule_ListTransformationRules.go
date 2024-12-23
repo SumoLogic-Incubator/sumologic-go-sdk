@@ -1,21 +1,19 @@
 package cip
 
 import (
+	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
-
-	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 )
 
 /*
 ListTransformationRules
 Get a list of transformation rules in the organization. The response is paginated with a default limit of 100 rules per page.
-
-		optional - nil or *types.TransformationRulesOpts - Optional Parameters:
-			Limit (optional.Int32) - Limit the number of transformation rules returned in the response.
-	     	Token (optional.String) - Continuation token to get the next page of results. A page object with the next continuation token is returned in the response body. Subsequent GET requests should specify the continuation token to get the next page of results. token is set to null when no more pages are left.
+	optional - nil or *types.TransformationRulesOpts - Optional Parameters:
+		Limit (optional.Int32) - Limit the number of transformation rules returned in the response.
+     	Token (optional.String) - Continuation token to get the next page of results. A page object with the next continuation token is returned in the response body. Subsequent GET requests should specify the continuation token to get the next page of results. token is set to null when no more pages are left.
 */
 func (a *APIClient) ListTransformationRules(localVarOptionals *types.TransformationRulesOpts) (types.TransformationRulesResponse, *http.Response, error) {
 	var (

@@ -1,18 +1,16 @@
 package cip
 
 import (
+	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
-
-	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 )
 
 /*
 RecoverSubdomains
 Send an email with the subdomain information for a user with the given email address.
-
 	email - Email address of the user to get subdomain information.
 */
 func (a *APIClient) RecoverSubdomains(email string) (*http.Response, error) {

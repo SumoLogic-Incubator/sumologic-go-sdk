@@ -2,18 +2,16 @@ package cip
 
 import (
 	"fmt"
+	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
-
-	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 )
 
 /*
 GetMonitorsFullPath
 Get the full path of the monitor or folder in the monitors library.
-
 	id - Identifier of the monitor or folder.
 */
 func (a *APIClient) GetMonitorsFullPath(id string) (types.Path, *http.Response, error) {

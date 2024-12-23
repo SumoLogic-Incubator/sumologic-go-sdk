@@ -13,7 +13,6 @@ import (
 /*
 UpdateInstalledCollector
 Update an installed collector in the organization.
-
 	body - Information to update about the collector.
 	id - Identifier of the installed collector to update.
 */

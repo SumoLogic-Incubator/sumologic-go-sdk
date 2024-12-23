@@ -1,18 +1,16 @@
 package cip
 
 import (
+	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
-
-	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 )
 
 /*
 ListDynamicParsingRules
 Get a list of all dynamic parsing rules. The response is paginated with a default limit of 100 dynamic parsing rules per page.
-
 	optional - nil or *types.DynamicParsingRuleOpts - Optional Parameters:
 		Limit (optional.Int32) - Limit the number of dynamic parsing rules returned in the response. The number of dynamic parsing rules returned may be less than the limit.
 		Token (optional.String) - Continuation token to get the next page of results. A page object with the next continuation token is returned in the response body. Subsequent GET requests should specify the continuation token to get the next page of results.

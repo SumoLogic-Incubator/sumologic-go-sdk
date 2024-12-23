@@ -2,18 +2,16 @@ package cip
 
 import (
 	"fmt"
+	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
-
-	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 )
 
 /*
 DisableScheduledView
 Disable a scheduled view with the given identifier.
-
 	id - Identifier of the scheduled view to disable.
 */
 func (a *APIClient) DisableScheduledView(id string) (*http.Response, error) {

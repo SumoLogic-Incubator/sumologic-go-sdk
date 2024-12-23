@@ -2,18 +2,16 @@ package cip
 
 import (
 	"fmt"
+	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
-
-	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 )
 
 /*
 GetCustomField
 Get the details of a custom field.
-
 	id - Identifier of a field.
 */
 func (a *APIClient) GetCustomField(id string) (types.CustomField, *http.Response, error) {

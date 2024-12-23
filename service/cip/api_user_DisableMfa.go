@@ -2,18 +2,16 @@ package cip
 
 import (
 	"fmt"
+	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
-
-	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 )
 
 /*
 DisableMfa
 Disable multi-factor authentication for given user.
-
 	body - Email and Password of the user to disable MFA for.
 	id - Identifier of the user to disable MFA for.
 */

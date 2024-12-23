@@ -1,18 +1,16 @@
 package cip
 
 import (
+	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
-
-	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 )
 
 /*
 SetUserConcurrentSessionsLimitPolicy
 Set the User Concurrent Sessions Limit policy. When enabled, the number of concurrent sessions a user may have is limited to the value entered. If a user exceeds the allowed number of sessions, the user's oldest session will be logged out to accommodate the new one. Disabling this policy means a user may have an unlimited number of concurrent sessions. [Learn More](https://help.sumologic.com/Manage/Security/Set_a_Limit_for_User_Concurrent_Sessions)
-
 	body - Specifies if the policy is enabled or not
 */
 func (a *APIClient) SetUserConcurrentSessionsLimitPolicy(body types.UserConcurrentSessionsLimitPolicy) (types.UserConcurrentSessionsLimitPolicy, *http.Response, error) {

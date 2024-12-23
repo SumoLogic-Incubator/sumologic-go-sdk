@@ -2,18 +2,16 @@ package cip
 
 import (
 	"fmt"
+	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
-
-	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 )
 
 /*
 AddContentPermissions
 Add permissions to a content item with the given identifier.
-
 	body - New permissions to add to the content item with the given identifier.
 	id - The identifier of the content item.
 	optional - nil or *types.ContentPermissionsOpts - Optional Parameters:

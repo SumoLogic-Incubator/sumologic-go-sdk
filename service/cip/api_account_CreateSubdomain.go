@@ -1,18 +1,16 @@
 package cip
 
 import (
+	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
-
-	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 )
 
 /*
 CreateSubdomain
 Create a subdomain. Only the Account Owner can create a subdomain.
-
 	body - The new subdomain.
 */
 func (a *APIClient) CreateSubdomain(body types.ConfigureSubdomainRequest) (types.SubdomainDefinitionResponse, *http.Response, error) {

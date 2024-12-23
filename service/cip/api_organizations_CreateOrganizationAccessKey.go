@@ -2,18 +2,16 @@ package cip
 
 import (
 	"fmt"
+	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
-
-	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 )
 
 /*
 CreateOrganizationAccessKey
 Get an access ID and key pair for an existing organization based on the organization identifier.
-
 	body - Access Key details.
 	parentDeploymentId - Deployment on which the calling organization resides.
 	orgId - Identifier of the organization for which the access ID and key pair is required.

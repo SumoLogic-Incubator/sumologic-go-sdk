@@ -2,18 +2,16 @@ package cip
 
 import (
 	"fmt"
+	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
-
-	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 )
 
 /*
 GetAsyncImportStatus
 Get the status of a content import job for the given job identifier.
-
 	folderId - The identifier of the folder to import into.
 	jobId - The identifier of the import request.
 	optional - nil or *types.ContentOpts - Optional Parameters:

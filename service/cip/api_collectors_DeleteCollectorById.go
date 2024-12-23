@@ -12,7 +12,6 @@ import (
 /*
 DeleteCollectorById
 Delete a collector with the given identifier from the organization.
-
 	id - Identifier of the collector to delete.
 */
 func (a *APIClient) DeleteCollectorById(id string) (*http.Response, error) {

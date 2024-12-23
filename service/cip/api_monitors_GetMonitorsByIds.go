@@ -1,18 +1,16 @@
 package cip
 
 import (
+	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
-
-	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 )
 
 /*
 GetMonitorsByIds
 Bulk read a monitor or folder by the given identifiers from the monitors library.
-
 	ids - A comma-separated list of identifiers.
 */
 func (a *APIClient) GetMonitorsByIds(ids []string) (map[string]types.MonitorsLibraryBaseResponse, *http.Response, error) {

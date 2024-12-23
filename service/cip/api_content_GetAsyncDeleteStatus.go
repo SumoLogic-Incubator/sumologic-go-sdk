@@ -2,18 +2,16 @@ package cip
 
 import (
 	"fmt"
+	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
-
-	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 )
 
 /*
 GetAsyncDeleteStatus
 Get the status of an asynchronous content deletion job request for the given job identifier.
-
 	id - Identifier of the content to delete.
 	jobId - The identifier of the asynchronous job.
 	optional - nil or *types.ContentOpts - Optional Parameters:

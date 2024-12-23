@@ -2,18 +2,16 @@ package cip
 
 import (
 	"fmt"
+	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
-
-	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 )
 
 /*
 GetAsyncExportStatus
 Get the status of an asynchronous content export request for the given job identifier. On success, use the [getExportResult](#operation/getAsyncExportResult) endpoint to get the result of the export job.
-
 	contentId - The identifier of the exported content item.
 	jobId - The identifier of the asynchronous export job.
 	optional - nil or *types.ContentManagementApiGetAsyncExportStatusOpts - Optional Parameters:

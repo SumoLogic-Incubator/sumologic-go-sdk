@@ -1,18 +1,16 @@
 package cip
 
 import (
+	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
-
-	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 )
 
 /*
 CreateExtractionRule
 Create a new field extraction rule.
-
 	body - Information about the new field extraction rule.
 */
 func (a *APIClient) CreateExtractionRule(body types.ExtractionRuleDefinition) (types.ExtractionRule, *http.Response, error) {

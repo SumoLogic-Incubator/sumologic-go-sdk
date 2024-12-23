@@ -2,18 +2,16 @@ package cip
 
 import (
 	"fmt"
+	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
-
-	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 )
 
 /*
 CancelRetentionUpdate
 Cancel update to retention of a partition for which retention was updated previously using reduceRetentionPeriodImmediately parameter as false
-
 	id - Identifier of the partition to cancel the retention update for.
 */
 func (a *APIClient) CancelRetentionUpdate(id string) (*http.Response, error) {

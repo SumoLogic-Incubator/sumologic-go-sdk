@@ -1,18 +1,16 @@
 package cip
 
 import (
+	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
-
-	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 )
 
 /*
 CreateIngestBudget
 Create a new ingest budget.
-
 	body - Information about the new ingest budget.
 */
 func (a *APIClient) CreateIngestBudget(body types.IngestBudgetDefinition) (types.IngestBudget, *http.Response, error) {

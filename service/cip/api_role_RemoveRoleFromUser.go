@@ -2,18 +2,16 @@ package cip
 
 import (
 	"fmt"
+	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
-
-	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 )
 
 /*
 RemoveRoleFromUser
 Remove a role from a user in the organization.
-
 	roleId - Identifier of the role to delete.
 	userId - Identifier of the user to remove the role from.
 */

@@ -2,18 +2,16 @@ package cip
 
 import (
 	"fmt"
+	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
-
-	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 )
 
 /*
 MoveMonitors
 Move a monitor or folder to a different location in the monitors library.
-
 	id - Identifier of the monitor or folder to move.
 	parentId - Identifier of the parent folder to move the monitor or folder to.
 */

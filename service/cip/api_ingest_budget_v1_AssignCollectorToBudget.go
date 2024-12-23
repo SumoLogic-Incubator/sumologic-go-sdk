@@ -2,18 +2,16 @@ package cip
 
 import (
 	"fmt"
+	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
-
-	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 )
 
 /*
 AssignCollectorToBudget
 Assign a Collector to a budget.
-
 	id - Identifier of the ingest budget to assign to the Collector.
 	collectorId - Identifier of the Collector to assign.
 */

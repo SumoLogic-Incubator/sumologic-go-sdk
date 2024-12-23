@@ -2,18 +2,16 @@ package cip
 
 import (
 	"fmt"
+	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
-
-	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 )
 
 /*
 UpdateAccessKey
 Updates the properties of existing accessKey by accessId. It can be used to enable or disable the access key and to update the corsHeaders list.
-
 	body - Information to update about the access key
 	id - The accessId of the access key to update.
 */

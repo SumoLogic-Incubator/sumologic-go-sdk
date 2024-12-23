@@ -1,18 +1,16 @@
 package cip
 
 import (
+	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
-
-	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 )
 
 /*
 CreateUser
 Create a new user in the organization.
-
 	body - Information about the new user.
 */
 func (a *APIClient) CreateUser(body types.CreateUserDefinition) (types.UserModel, *http.Response, error) {

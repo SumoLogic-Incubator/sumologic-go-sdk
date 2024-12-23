@@ -2,18 +2,16 @@ package cip
 
 import (
 	"fmt"
+	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
-
-	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 )
 
 /*
 GetApp
 Gets the app with the given universally unique identifier (UUID).
-
 	uuid - The identifier of the app to retrieve.
 */
 func (a *APIClient) GetApp(uuid string) (types.App, *http.Response, error) {

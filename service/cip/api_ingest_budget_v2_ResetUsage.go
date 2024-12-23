@@ -2,18 +2,16 @@ package cip
 
 import (
 	"fmt"
+	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
-
-	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 )
 
 /*
 ResetUsageV2
 Reset ingest budget's current usage to 0 before the scheduled reset time.
-
 	id - Identifier of the ingest budget to reset usage.
 */
 func (a *APIClient) ResetUsageV2(id string) (*http.Response, error) {

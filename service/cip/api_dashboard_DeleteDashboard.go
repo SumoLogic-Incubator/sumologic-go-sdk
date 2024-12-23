@@ -2,18 +2,16 @@ package cip
 
 import (
 	"fmt"
+	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
-
-	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 )
 
 /*
 DeleteDashboard
 Delete a dashboard by the given identifier.
-
 	id - Identifier of the dashboard to delete.
 */
 func (a *APIClient) DeleteDashboard(id string) (*http.Response, error) {

@@ -2,18 +2,16 @@ package cip
 
 import (
 	"fmt"
+	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
-
-	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 )
 
 /*
 DeleteAccessKey
 Deletes the access key with the given accessId.
-
 	id - The accessId of the access key to delete.
 */
 func (a *APIClient) DeleteAccessKey(id string) (*http.Response, error) {

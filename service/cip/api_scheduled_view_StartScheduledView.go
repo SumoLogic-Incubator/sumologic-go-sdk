@@ -2,18 +2,16 @@ package cip
 
 import (
 	"fmt"
+	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
-
-	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 )
 
 /*
 StartScheduledView
 Start a scheduled view with the given identifier.
-
 	id - Identifier of the scheduled view to start.
 */
 func (a *APIClient) StartScheduledView(id string) (types.ScheduledView, *http.Response, error) {

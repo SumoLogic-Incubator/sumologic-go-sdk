@@ -1,18 +1,16 @@
 package cip
 
 import (
+	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
-
-	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 )
 
 /*
 DeleteAllowlistedCidrs
 Remove allowlisted CIDR notations and/or IP addresses from the organization. Removed CIDRs/IPs will immediately lose access to Sumo Logic and content sharing.
-
 	body - List of all CIDR notations and/or IP addresses to be removed from the allowlist of the organization.
 */
 func (a *APIClient) DeleteAllowlistedCidrs(body types.CidrList) (types.CidrList, *http.Response, error) {

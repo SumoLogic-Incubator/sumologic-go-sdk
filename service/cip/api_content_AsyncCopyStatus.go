@@ -2,18 +2,16 @@ package cip
 
 import (
 	"fmt"
+	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
-
-	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 )
 
 /*
 AsyncCopyStatus
 Gets the status of a copy request with the given jobId.
-
 	id - The identifier of the content that was copied.
 	jobId - The identifier of the asynchronous copy request job.
 	optional - nil or *types.ContentOpts - Optional Parameters:

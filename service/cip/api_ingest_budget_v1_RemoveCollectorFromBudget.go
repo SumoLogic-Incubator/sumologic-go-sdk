@@ -2,18 +2,16 @@ package cip
 
 import (
 	"fmt"
+	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
-
-	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 )
 
 /*
 RemoveCollectorFromBudget
 Remove Collector from a budget.
-
 	id - Identifier of the ingest budget to unassign from the Collector.
 	collectorId - Identifier of the Collector to unassign.
 */

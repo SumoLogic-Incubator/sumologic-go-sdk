@@ -1,18 +1,16 @@
 package cip
 
 import (
+	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
-
-	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 )
 
 /*
 ListConnections
 Get a list of all connections in the organization. The response is paginated with a default limit of 100 connections per page.
-
 	optional - nil or *types.ConnectionOpts - Optional Parameters:
 		Limit (optional.Int32) - Limit the number of connections returned in the response. The number of connections returned may be less than the limit.
 		Token (optional.String) - Continuation token to get the next page of results. A page object with the next continuation token is returned in the response body. Subsequent GET requests should specify the continuation token to get the next page of results. token is set to null when no more pages are left.

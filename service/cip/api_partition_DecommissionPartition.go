@@ -2,18 +2,16 @@ package cip
 
 import (
 	"fmt"
+	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
-
-	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 )
 
 /*
 DecommissionPartition
 Decommission a partition with the given identifier from the organization.
-
 	id - Identifier of the partition to decommission.
 */
 func (a *APIClient) DecommissionPartition(id string) (*http.Response, error) {

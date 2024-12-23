@@ -2,18 +2,16 @@ package cip
 
 import (
 	"fmt"
+	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
-
-	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 )
 
 /*
 GetBuiltInField
 Get the details of a built-in field.
-
 	id - Identifier of a built-in field.
 */
 func (a *APIClient) GetBuiltInField(id string) (types.BuiltinField, *http.Response, error) {

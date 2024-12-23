@@ -1,18 +1,16 @@
 package cip
 
 import (
+	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
-
-	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 )
 
 /*
 CreateWebhookConnection
 Create a new webhook connection in the organization.
-
 	body - Information about the new webhook connection.
 */
 func (a *APIClient) CreateWebhookConnection(body types.WebhookDefinition) (types.WebhookConnection, *http.Response, error) {

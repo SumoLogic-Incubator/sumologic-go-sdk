@@ -1,18 +1,16 @@
 package cip
 
 import (
+	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
-
-	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 )
 
 /*
 CreateTransformationRule
 Create a new transformation rule.
-
 	body - The configuration of the transformation rule to create.
 */
 func (a *APIClient) CreateTransformationRule(body types.TransformationRuleRequest) (types.TransformationRuleResponse, *http.Response, error) {

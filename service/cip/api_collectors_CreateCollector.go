@@ -11,7 +11,6 @@ import (
 /*
 CreateCollector
 Create a new hosted collector in the organization.
-
 	body - Information about the new collector
 */
 func (a *APIClient) CreateCollector(body types.CreateCollectorRequest) (types.CollectorModel, *http.Response, error) {

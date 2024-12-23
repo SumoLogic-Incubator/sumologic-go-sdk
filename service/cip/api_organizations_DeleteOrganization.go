@@ -2,18 +2,16 @@ package cip
 
 import (
 	"fmt"
+	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
-
-	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 )
 
 /*
 DeleteOrganization
 Deactivate an organization with the given identifier, deleting all its data and its subscription.
-
 	orgId - Identifier of the organization to deactivate.
 	parentDeploymentId - Deployment on which the calling organization resides.
 */

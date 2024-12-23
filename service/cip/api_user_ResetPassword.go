@@ -2,18 +2,16 @@ package cip
 
 import (
 	"fmt"
+	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
-
-	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 )
 
 /*
 ResetPassword
 Reset a user's password.
-
 	id - Identifier of the user to reset password.
 */
 func (a *APIClient) ResetPassword(id string) (*http.Response, error) {

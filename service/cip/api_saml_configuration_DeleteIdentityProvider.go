@@ -2,18 +2,16 @@ package cip
 
 import (
 	"fmt"
+	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
-
-	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 )
 
 /*
 DeleteIdentityProvider
 Delete a SAML configuration with the given identifier from the organization.
-
 	id - Identifier of the SAML configuration to delete.
 */
 func (a *APIClient) DeleteIdentityProvider(id string) (*http.Response, error) {

@@ -2,18 +2,16 @@ package cip
 
 import (
 	"fmt"
+	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
-
-	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 )
 
 /*
 ImportMonitorsItem
 Import a monitor or folder.
-
 	body - The monitor or folder to be imported.
 	parentId - Identifier of the parent folder in which to import the monitor or folder.
 */

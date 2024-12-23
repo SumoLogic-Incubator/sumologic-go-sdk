@@ -2,18 +2,16 @@ package cip
 
 import (
 	"fmt"
+	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
-
-	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 )
 
 /*
 GetMonitorsById
 Get a monitor or folder from the monitors library.
-
 	id - Identifier of the monitor or folder to read.
 */
 func (a *APIClient) GetMonitorsById(id string) (types.MonitorsLibraryBaseResponse, *http.Response, error) {

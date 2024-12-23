@@ -12,7 +12,6 @@ import (
 /*
 CreateAWSS3ArchiveSource
 Create an AWS S3 Archive source.
-
 	body - The definition of the AWS S3 Archive source.
 	collectorId - The identifier of the Sumo Logic collector to assign the source to.
 */

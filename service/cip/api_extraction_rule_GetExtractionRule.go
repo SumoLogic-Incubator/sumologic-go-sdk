@@ -2,18 +2,16 @@ package cip
 
 import (
 	"fmt"
+	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
-
-	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 )
 
 /*
 GetExtractionRule
 Get a field extraction rule with the given identifier.
-
 	id - Identifier of field extraction rule to return.
 */
 func (a *APIClient) GetExtractionRule(id string) (types.ExtractionRule, *http.Response, error) {

@@ -2,18 +2,16 @@ package cip
 
 import (
 	"fmt"
+	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
-
-	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 )
 
 /*
 GetToken
 Get a token with the given identifier in the token library.
-
 	id - Identifier of the token to return.
 */
 func (a *APIClient) GetToken(id string) (types.TokenBaseResponse, *http.Response, error) {

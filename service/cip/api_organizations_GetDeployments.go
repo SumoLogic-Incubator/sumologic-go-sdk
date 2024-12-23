@@ -1,18 +1,16 @@
 package cip
 
 import (
+	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
-
-	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 )
 
 /*
 GetDeployments
 Get deployment details where organization can be created.
-
 	parentDeploymentId - Deployment on which the calling organization resides.
 */
 func (a *APIClient) GetDeployments(parentDeploymentId string) ([]types.Deployment, *http.Response, error) {

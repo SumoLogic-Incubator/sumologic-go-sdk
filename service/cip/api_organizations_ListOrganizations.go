@@ -1,18 +1,16 @@
 package cip
 
 import (
+	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
-
-	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 )
 
 /*
 ListOrganizations
 Get a list of all organizations in this account. The response is paginated with a default limit of 100 organizations per page.
-
 	parentDeploymentId - Deployment on which the calling organization resides.
 	optional - nil or *types.ListOrganizationsOpts - Optional Parameters:
 		Limit (optional.Int32) - Limit the number of organizations returned in the response. The number of organizations returned may be less than the &#x60;limit&#x60;.

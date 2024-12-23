@@ -1,18 +1,16 @@
 package cip
 
 import (
+	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
-
-	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 )
 
 /*
 CreateToken
 Create a token in the token library.
-
 	body - Information about the token to create.
 */
 func (a *APIClient) CreateToken(body types.TokenBaseDefinition) (types.TokenBaseResponse, *http.Response, error) {

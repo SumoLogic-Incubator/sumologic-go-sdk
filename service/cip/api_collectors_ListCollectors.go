@@ -11,7 +11,6 @@ import (
 /*
 ListCollectors
 Get a list of collectors in the organization. The response has a default limit of 1000 collectors.
-
 	optional - nil or *types.ListCollectorsOpts - Optional Parameters:
 		Filter (optional.String) - Filter the Collectors returned using one of the available filter types: installed, hosted, dead or alive.
 		Limit (optional.Int32) - Limit the number of collectors return in the response. The number of collectors returned may be less than the limit.

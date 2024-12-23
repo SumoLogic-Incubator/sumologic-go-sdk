@@ -2,18 +2,16 @@ package cip
 
 import (
 	"fmt"
+	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
-
-	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 )
 
 /*
 CreateAllowlistedUser
 Allowlist a user from SAML lockdown allowing them to sign in using a password in addition to SAML.
-
 	userId - Identifier of the user.
 */
 func (a *APIClient) CreateAllowlistedUser(userId string) (types.AllowlistedUserResult, *http.Response, error) {

@@ -2,18 +2,16 @@ package cip
 
 import (
 	"fmt"
+	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
-
-	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 )
 
 /*
 DeleteTransformationRule
 Delete a transformation rule with the given identifier.
-
 	id - Identifier of the transformation rule to delete.
 */
 func (a *APIClient) DeleteTransformationRule(id string) (*http.Response, error) {

@@ -2,18 +2,16 @@ package cip
 
 import (
 	"fmt"
+	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
-
-	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 )
 
 /*
 AssignRoleToUser
 Assigns a role to a user in the organization.
-
 	roleId - Identifier of the role to assign.
 	userId - Identifier of the user to assign the role to.
 */

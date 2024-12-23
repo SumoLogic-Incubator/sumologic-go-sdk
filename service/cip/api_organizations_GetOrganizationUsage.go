@@ -2,19 +2,18 @@ package cip
 
 import (
 	"fmt"
+	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
-
-	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 )
 
 /*
 GetOrganizationUsage
 Get the detailed usage breakdown of an existing organization based on the organization identifier.
-  - @param orgId Identifier of the organization for which the details are required.
-  - @param parentDeploymentId Deployment on which the calling organization resides.
+ * @param orgId Identifier of the organization for which the details are required.
+ * @param parentDeploymentId Deployment on which the calling organization resides.
 */
 func (a *APIClient) GetOrganizationUsage(orgId string, parentDeploymentId string) (types.DetailedUsage, *http.Response, error) {
 	var (

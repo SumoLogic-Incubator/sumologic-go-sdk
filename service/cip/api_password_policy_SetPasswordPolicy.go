@@ -1,18 +1,16 @@
 package cip
 
 import (
+	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
-
-	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 )
 
 /*
 SetPasswordPolicy
 Update the current password policy.
-
 	body - Specify the password policy.
 */
 func (a *APIClient) SetPasswordPolicy(body types.PasswordPolicy) (types.PasswordPolicy, *http.Response, error) {

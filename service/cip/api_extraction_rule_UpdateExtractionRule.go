@@ -2,20 +2,18 @@ package cip
 
 import (
 	"fmt"
+	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
-
-	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 )
 
 /*
 UpdateExtractionRule
 Update an existing field extraction rule. All properties specified in the request are replaced. Missing properties are set to their default values.
-
-		body - Information to update about the field extraction rule.
-	 	id - Identifier of the field extraction rule to update.
+	body - Information to update about the field extraction rule.
+ 	id - Identifier of the field extraction rule to update.
 */
 func (a *APIClient) UpdateExtractionRule(body types.UpdateExtractionRuleDefinition, id string) (types.ExtractionRule, *http.Response, error) {
 	var (

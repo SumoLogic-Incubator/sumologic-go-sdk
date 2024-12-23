@@ -2,18 +2,16 @@ package cip
 
 import (
 	"fmt"
+	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
-
-	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 )
 
 /*
 ListArchiveJobsBySourceId
 Get a list of all the ingestion jobs created on an Archive Source. The response is paginated with a default limit of 10 jobs per page.
-
 	sourceId - The identifier of an Archive Source.
 	optional - nil or *types.ArchiveOpts - Optional Parameters:
 		Limit (optional.Int32) - Limit the number of jobs returned in the response. The number of jobs returned may be less than the limit.

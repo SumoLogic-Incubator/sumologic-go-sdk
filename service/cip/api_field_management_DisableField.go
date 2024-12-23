@@ -2,18 +2,16 @@ package cip
 
 import (
 	"fmt"
+	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
-
-	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 )
 
 /*
 DisableField
 After disabling a field Sumo Logic will start dropping its incoming values at ingest. As a result, they won&#x27;t be searchable or usable. Historical values are not removed and remain searchable.
-
 	id - Identifier of a field to disable.
 */
 func (a *APIClient) DisableField(id string) (*http.Response, error) {

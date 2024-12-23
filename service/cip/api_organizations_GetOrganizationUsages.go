@@ -1,24 +1,21 @@
 package cip
 
 import (
+	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
-
-	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 )
 
 /*
 GetOrganizationUsages
 Get the credits usage details of all the given organizations. The response is paginated with a default limit of 100 organizations per page.
-
 	body - List of the organizations for which usage needs to be fetched.
 	parentDeploymentId - Deployment on which the calling organization resides.
 	optional - nil or *types.OrganizationsUsagesOpts - Optional Parameters:
 		Limit (optional.Int32) - Limit the number of results returned in the response. The number of results returned may be less than the limit.
 		Token (optional.String) - Continuation token to get the next page of results. A page object with the next continuation token is returned in the response body. Subsequent GET requests should specify the continuation token to get the next page of results. token is set to null when no more pages are left.
-
 @return ListUsagesResponse
 */
 func (a *APIClient) GetOrganizationUsages(body []string, parentDeploymentId string, localVarOptionals *types.OrganizationsUsagesOpts) (types.ListUsagesResponse, *http.Response, error) {

@@ -1,18 +1,16 @@
 package cip
 
 import (
+	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
-
-	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 )
 
 /*
 CreateMetricsSearch
 Saves a metrics search in the content library. Metrics search consists of one or more queries, a time range, a quantization period and a set of chart properties like line width.
-
 	body - The definition of the metrics search.
 */
 func (a *APIClient) CreateMetricsSearch(body types.SaveMetricsSearchRequest) (types.MetricsSearchInstance, *http.Response, error) {

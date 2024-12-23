@@ -2,18 +2,16 @@ package cip
 
 import (
 	"fmt"
+	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
-
-	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 )
 
 /*
 DeleteAllowlistedUser
 Remove an allowlisted user requiring them to sign in using SAML.
-
 	userId - Identifier of user that will no longer be allowlisted from SAML Lockdown.
 */
 func (a *APIClient) DeleteAllowlistedUser(userId string) (*http.Response, error) {

@@ -1,18 +1,16 @@
 package cip
 
 import (
+	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
-
-	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 )
 
 /*
 CreateIdentityProvider
 Create a new SAML configuration in the organization.
-
 	body - The configuration of the SAML identity provider.
 */
 func (a *APIClient) CreateIdentityProvider(body types.SamlIdentityProviderRequest) (types.SamlIdentityProvider, *http.Response, error) {

@@ -1,18 +1,16 @@
 package cip
 
 import (
+	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
-
-	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 )
 
 /*
 GetLogSearchEstimatedUsageByTier
 Gets the estimated volume of data that would be scanned for a given log search per data tier.
-
 	body - The definition of the log search estimated usage.
 */
 func (a *APIClient) GetLogSearchEstimatedUsageByTier(body types.LogSearchEstimatedUsageRequestV2) (types.LogSearchEstimatedUsageByTierDefinition, *http.Response, error) {

@@ -1,18 +1,17 @@
 package cip
 
 import (
+	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
-
-	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 )
 
 /*
 GetMonitorsByPath
 Read a monitor or folder by its path in the monitors library structure.
-  - @param path The path of the monitor or folder.
+ * @param path The path of the monitor or folder.
 */
 func (a *APIClient) GetMonitorsByPath(path string) (types.MonitorsLibraryBaseResponse, *http.Response, error) {
 	var (

@@ -2,18 +2,16 @@ package cip
 
 import (
 	"fmt"
+	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
-
-	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 )
 
 /*
 GetDynamicParsingRule
 Get a dynamic parsing rule with the given identifier.
-
 	id - Identifier of dynamic parsing rule to return.
 */
 func (a *APIClient) GetDynamicParsingRule(id string) (types.DynamicRule, *http.Response, error) {

@@ -2,18 +2,16 @@ package cip
 
 import (
 	"fmt"
+	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
-
-	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 )
 
 /*
 UpdateOrganization
 Update an existing organization&#x27;s subscription based on its identifier.
-
 	body - The utilization baselines for the organization, which will determine their credits allocation. For organizations on Trial/Free plans, reallocating credits will upgrade their plan type to your plan. The plan change cannot be rolled back.
 	parentDeploymentId - Deployment on which the calling organization resides.
 	orgId - Identifier of the organization to update.

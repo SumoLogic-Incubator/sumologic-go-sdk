@@ -2,18 +2,16 @@ package cip
 
 import (
 	"fmt"
+	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
-
-	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 )
 
 /*
 GetTransformationRule
 Get a transformation rule with the given identifier.
-
 	id - Identifier of transformation rule to return.
 */
 func (a *APIClient) GetTransformationRule(id string) (types.TransformationRuleResponse, *http.Response, error) {

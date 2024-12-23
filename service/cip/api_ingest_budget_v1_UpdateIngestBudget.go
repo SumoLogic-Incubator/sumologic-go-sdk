@@ -2,18 +2,16 @@ package cip
 
 import (
 	"fmt"
+	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
-
-	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 )
 
 /*
 UpdateIngestBudget
 Update an existing ingest budget. All properties specified in the request are required.
-
 	body - Information to update about the ingest budget.
 	id - Identifier of the ingest budget to update.
 */

@@ -2,18 +2,16 @@ package cip
 
 import (
 	"fmt"
+	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
-
-	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 )
 
 /*
 DeleteIngestBudgetV2
 Delete an ingest budget with the given identifier.
-
 	id - Identifier of the ingest budget to delete.
 */
 func (a *APIClient) DeleteIngestBudgetV2(id string) (*http.Response, error) {

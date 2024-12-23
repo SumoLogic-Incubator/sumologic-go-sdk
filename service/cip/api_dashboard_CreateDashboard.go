@@ -1,18 +1,16 @@
 package cip
 
 import (
+	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
-
-	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 )
 
 /*
 CreateDashboard
 Creates a new dashboard.
-
 	body - Information to create the new dashboard.
 */
 func (a *APIClient) CreateDashboard(body types.DashboardRequest) (types.Dashboard, *http.Response, error) {

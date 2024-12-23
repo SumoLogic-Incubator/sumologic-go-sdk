@@ -1,12 +1,11 @@
 package cip
 
 import (
+	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
-
-	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 )
 
 /*
@@ -14,8 +13,8 @@ CreateAccessKey
 Creates a new access ID and key pair. The new access key can be used from the domains specified in corsHeaders field.
 Whether Sumo Logic accepts or rejects an API request depends on whether it contains an ORIGIN header and the entries in the allowlist.
 Sumo Logic will reject:
- 1. Requests with an ORIGIN header but the allowlist is empty.
- 2. Requests with an ORIGIN header that don't match any entry in the allowlist.
+	1. Requests with an ORIGIN header but the allowlist is empty.
+	2. Requests with an ORIGIN header that don't match any entry in the allowlist.
 */
 func (a *APIClient) CreateAccessKey(body types.AccessKeyCreateRequest) (types.AccessKey, *http.Response, error) {
 	var (

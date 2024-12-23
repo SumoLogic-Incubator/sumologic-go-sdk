@@ -1,18 +1,16 @@
 package cip
 
 import (
+	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
-
-	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 )
 
 /*
 CreateServiceNowConnection
 Create a new ServiceNow connection in the organization.
-
 	body - Information about the new ServiceNow connection.
 */
 func (a *APIClient) CreateServiceNowConnection(body types.ServiceNowDefinition) (types.ServiceNowConnection, *http.Response, error) {

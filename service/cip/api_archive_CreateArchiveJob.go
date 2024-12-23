@@ -2,18 +2,16 @@ package cip
 
 import (
 	"fmt"
+	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
-
-	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 )
 
 /*
 CreateArchiveJob
 Create an ingestion job to pull data from your S3 bucket.
-
 	body - The definition of the ingestion job to create.
 	sourceId - The identifier of the Archive Source for which the job is to be added.
 */

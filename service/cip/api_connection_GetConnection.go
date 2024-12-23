@@ -2,18 +2,16 @@ package cip
 
 import (
 	"fmt"
+	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
-
-	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 )
 
 /*
 GetConnection
 Get a connection with the given identifier.
-
 	id - Identifier of connection to return.
 	type_ - Type of connection to return. Valid values are WebhookConnection, ServiceNowConnections.
 */

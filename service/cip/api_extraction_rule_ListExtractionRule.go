@@ -1,21 +1,19 @@
 package cip
 
 import (
+	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
-
-	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 )
 
 /*
 ListExtractionRules
 Get a list of all field extraction rules. The response is paginated with a default limit of 100 field extraction rules per page.
-
-		optional - nil or *types.ExtractionRuleOpts - Optional Parameters:
-			Limit (optional.Int32) -  Limit the number of field extraction rules returned in the response. The number of field extraction rules returned may be less than the limit.
-	     	Token (optional.String) -  Continuation token to get the next page of results. A page object with the next continuation token is returned in the response body. Subsequent GET requests should specify the continuation token to get the next page of results.
+	optional - nil or *types.ExtractionRuleOpts - Optional Parameters:
+		Limit (optional.Int32) -  Limit the number of field extraction rules returned in the response. The number of field extraction rules returned may be less than the limit.
+     	Token (optional.String) -  Continuation token to get the next page of results. A page object with the next continuation token is returned in the response body. Subsequent GET requests should specify the continuation token to get the next page of results.
 */
 func (a *APIClient) ListExtractionRules(localVarOptionals *types.ExtractionRuleOpts) (types.ListExtractionRulesResponse, *http.Response, error) {
 	var (

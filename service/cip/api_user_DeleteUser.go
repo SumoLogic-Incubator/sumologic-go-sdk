@@ -2,18 +2,16 @@ package cip
 
 import (
 	"fmt"
+	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
-
-	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 )
 
 /*
 DeleteUser
 Delete a user with the given identifier from the organization and transfer their content to the user with the identifier specified in transferTo. If transferTo is not specified the contents are deleted.
-
 	id - Identifier of the user to delete.
 	optional - nil or *types.DeleteUserOpts - Optional Parameters:
 		TransferTo (optional.String) -  Identifier of the user to receive the transfer of content from the deleted user.

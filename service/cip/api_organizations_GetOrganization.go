@@ -2,18 +2,16 @@ package cip
 
 import (
 	"fmt"
+	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
-
-	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 )
 
 /*
 GetOrganization
 Get details of an existing organization based on an organization identifier.
-
 	orgId - Identifier of the organization for which the details are required.
 	parentDeploymentId - Deployment on which the calling organization resides.
 */

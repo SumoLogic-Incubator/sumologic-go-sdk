@@ -1,18 +1,16 @@
 package cip
 
 import (
+	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
-
-	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 )
 
 /*
 GetParentOrganizationDetails
 Get the credits usage and allocation details of the current organization.
-
 	parentDeploymentId - Deployment on which the calling organization resides.
 */
 func (a *APIClient) GetParentOrganizationDetails(parentDeploymentId string) (types.ParentUsage, *http.Response, error) {

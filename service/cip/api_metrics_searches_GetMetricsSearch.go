@@ -2,18 +2,16 @@ package cip
 
 import (
 	"fmt"
+	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
-
-	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 )
 
 /*
 GetMetricsSearch
 Returns a metrics search with the specified identifier.
-
 	id - Identifier of the metrics search.
 */
 func (a *APIClient) GetMetricsSearch(id string) (types.MetricsSearchInstance, *http.Response, error) {

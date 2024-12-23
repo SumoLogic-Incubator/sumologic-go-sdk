@@ -2,18 +2,16 @@ package cip
 
 import (
 	"fmt"
+	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
-
-	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 )
 
 /*
 RemoveContentPermissions
 Remove permissions from a content item with the given identifier.
-
 	body - Permissions to remove from a content item with the given identifier.
 	id - The identifier of the content item.
 	optional - nil or *types.ContentPermissionsOpts - Optional Parameters:

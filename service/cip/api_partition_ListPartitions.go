@@ -1,25 +1,23 @@
 package cip
 
 import (
+	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
-
-	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 )
 
 /*
 ListPartitions
 Get a list of all partitions in the organization. The response is paginated with a default limit of 100 partitions per page.
-
-		optional - nil or *types.PartitionOpts - Optional Parameters:
-			Limit (optional.Int32) - Limit the number of partitions returned in the response. The number of partitions returned may be less than the limit.
-	     	Token (optional.String) - Continuation token to get the next page of results. A page object with the next continuation token is returned in the response body. Subsequent GET requests should specify the continuation token to get the next page of results. token is set to null when no more pages are left.
-	     	ViewTypes (optional.Interface of []string) - The type of partitions to retrieve. More than one type of partitions can be retrieved in same request. Valid values are:
-				DefaultView To get General Index partition.
-				Partition To get user defined views/partitions.
-				AuditIndex: To get the internal audit indexes.
+	optional - nil or *types.PartitionOpts - Optional Parameters:
+		Limit (optional.Int32) - Limit the number of partitions returned in the response. The number of partitions returned may be less than the limit.
+     	Token (optional.String) - Continuation token to get the next page of results. A page object with the next continuation token is returned in the response body. Subsequent GET requests should specify the continuation token to get the next page of results. token is set to null when no more pages are left.
+     	ViewTypes (optional.Interface of []string) - The type of partitions to retrieve. More than one type of partitions can be retrieved in same request. Valid values are:
+			DefaultView To get General Index partition.
+			Partition To get user defined views/partitions.
+			AuditIndex: To get the internal audit indexes.
 */
 func (a *APIClient) ListPartitions(localVarOptionals *types.PartitionOpts) (types.ListPartitionsResponse, *http.Response, error) {
 	var (

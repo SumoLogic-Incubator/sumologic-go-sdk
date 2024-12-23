@@ -2,18 +2,16 @@ package cip
 
 import (
 	"fmt"
+	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
-
-	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 )
 
 /*
 DeleteRole
 Delete a role with the given identifier from the organization.
-
 	id - Identifier of the role to delete.
 */
 func (a *APIClient) DeleteRole(id string) (*http.Response, error) {

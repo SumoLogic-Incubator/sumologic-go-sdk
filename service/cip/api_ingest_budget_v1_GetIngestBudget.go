@@ -2,18 +2,16 @@ package cip
 
 import (
 	"fmt"
+	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
-
-	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 )
 
 /*
 GetIngestBudget
 Get an ingest budget by the given identifier.
-
 	id - Identifier of ingest budget to return.
 */
 func (a *APIClient) GetIngestBudget(id string) (types.IngestBudget, *http.Response, error) {

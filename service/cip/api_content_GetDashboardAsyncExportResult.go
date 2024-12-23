@@ -2,18 +2,16 @@ package cip
 
 import (
 	"fmt"
+	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
-
-	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 )
 
 /*
 GetDashboardAsyncExportResult
 Get dashboard results from content export job for the given job identifier. The results from this export are incompatible with the Library import feature in the Sumo user interface.
-
 	contentId - The identifier of the exported content item.
 	jobId - The identifier of the asynchronous job.
 	optional - nil or *types.ContentManagementApiGetAsyncExportResultOpts - Optional Parameters:

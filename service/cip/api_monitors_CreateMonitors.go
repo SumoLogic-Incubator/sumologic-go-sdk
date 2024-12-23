@@ -1,12 +1,11 @@
 package cip
 
 import (
+	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
-
-	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 )
 
 func (a *APIClient) CreateMonitors(body types.MonitorsLibraryBase, parentId string) (types.MonitorsLibraryBaseResponse, *http.Response, error) {

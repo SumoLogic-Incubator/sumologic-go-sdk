@@ -13,7 +13,6 @@ import (
 SendMessage
 Allows you to send data to a Sumo Logic HTTP source endpoint. If sending the data to the endpoint fails it will retry every 10 seconds
 based on the value of maxRetries.
-
 	maxRetries - determines how many times the message will attempt to be sent if there is an error sending.
 	message - data to send to the Sumo Logic source.
 */

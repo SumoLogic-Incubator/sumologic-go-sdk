@@ -2,18 +2,16 @@ package cip
 
 import (
 	"fmt"
+	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
-
-	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 )
 
 /*
 TruncateTable
 Delete all data from a lookup table.
-
 	id - Identifier of the table to clear.
 */
 func (a *APIClient) TruncateTable(id string) (types.LookupRequestToken, *http.Response, error) {

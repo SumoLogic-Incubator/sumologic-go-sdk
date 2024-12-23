@@ -2,18 +2,16 @@ package cip
 
 import (
 	"fmt"
+	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
-
-	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 )
 
 /*
 DeleteMonitorsById
 Delete a monitor or folder from the monitors library.
-
 	id - Identifier of the monitor or folder to delete.
 */
 func (a *APIClient) DeleteMonitorsById(id string) (*http.Response, error) {

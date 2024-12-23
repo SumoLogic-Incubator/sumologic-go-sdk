@@ -1,18 +1,16 @@
 package cip
 
 import (
+	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
-
-	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 )
 
 /*
 ValidateMonitorQueries
 Validate the query strings to make sure they are valid monitor queries.
-
 	body - The queries that will be validated.
 */
 func (a *APIClient) ValidateMonitorQueries(body types.MonitorQueries) (types.MonitorQueriesValidationResult, *http.Response, error) {

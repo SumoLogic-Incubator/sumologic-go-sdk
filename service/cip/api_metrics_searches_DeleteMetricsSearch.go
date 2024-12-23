@@ -2,18 +2,16 @@ package cip
 
 import (
 	"fmt"
+	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
-
-	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 )
 
 /*
 DeleteMetricsSearch
 Deletes a metrics search from the content library.
-
 	id - Identifier of the metrics search.
 */
 func (a *APIClient) DeleteMetricsSearch(id string) (*http.Response, error) {

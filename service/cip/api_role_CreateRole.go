@@ -1,18 +1,16 @@
 package cip
 
 import (
+	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
-
-	"github.com/SumoLogic-Labs/sumologic-go-sdk/service/cip/types"
 )
 
 /*
 CreateRole
 Create a new role in the organization.
-
 	body - Information about the new role.
 */
 func (a *APIClient) CreateRole(body types.CreateRoleDefinition) (types.RoleModel, *http.Response, error) {
